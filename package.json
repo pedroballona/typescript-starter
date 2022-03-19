@@ -1,0 +1,64 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "A starter project for typescript and node",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "private": "true",
+  "scripts": {
+    "test": "jest",
+    "lint:eslint": "eslint --cache --fix",
+    "lint:prettier": "prettier --write src",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "prepare": "husky install",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedroballona/typescript-starter.git"
+  },
+  "keywords": [
+    "starter",
+    "typescript"
+  ],
+  "author": "Pedro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pedroballona/typescript-starter/issues"
+  },
+  "homepage": "https://github.com/pedroballona/typescript-starter#readme",
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.0",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "lint-staged": {
+    "src/*.ts": "eslint --cache --fix",
+    "src/*.{js,css,md}": "prettier --write"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [
+      {
+        "files": ["src/*.ts", "src/*.js"]
+      }
+    ],
+    "ignorePatterns": [
+      "jest.config.js"
+    ]
+  }
+}
